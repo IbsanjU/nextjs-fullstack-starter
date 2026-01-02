@@ -146,12 +146,6 @@ export default function Home() {
             🔄 Refresh Users
           </button>
           <button
-            onClick={() => fetchUsers()}
-            className="px-4 py-2 bg-[rgb(var(--bg-secondary))] hover:bg-[rgb(var(--bg-tertiary))] text-[rgb(var(--text-primary))] border border-[rgb(var(--border))] font-medium rounded-lg transition-colors shadow-sm"
-          >
-            📊 View All
-          </button>
-          <button
             onClick={() => alert('Export functionality would download users as CSV/JSON')}
             className="px-4 py-2 bg-[rgb(var(--bg-secondary))] hover:bg-[rgb(var(--bg-tertiary))] text-[rgb(var(--text-primary))] border border-[rgb(var(--border))] font-medium rounded-lg transition-colors shadow-sm"
           >
