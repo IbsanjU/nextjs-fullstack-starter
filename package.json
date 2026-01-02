@@ -1,0 +1,60 @@
+{
+  "name": "nextjs-fullstack-starter",
+  "version": "1.0.0",
+  "description": "Production-ready Next.js fullstack starter with centralized configuration",
+  "scripts": {
+    "dev": "next dev",
+    "build": "prisma generate && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:push": "prisma db push",
+    "db:seed": "tsx prisma/seed.ts",
+    "db:studio": "prisma studio",
+    "docker:up": "docker compose up -d postgres",
+    "docker:down": "docker compose down",
+    "docker:app": "docker compose --profile app up --build"
+  },
+  "keywords": [
+    "nextjs",
+    "typescript",
+    "prisma",
+    "docker",
+    "vercel"
+  ],
+  "author": "",
+  "license": "MIT",
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
+  "dependencies": {
+    "@types/node": "^25.0.3",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "next": "^16.1.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@prisma/client": "^5.22.0",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@vitejs/plugin-react": "^5.1.2",
+    "autoprefixer": "^10.4.23",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^16.1.1",
+    "postcss": "^8.5.6",
+    "prettier": "^3.7.4",
+    "prisma": "^5.22.0",
+    "tailwindcss": "^3.4.19",
+    "tsx": "^4.21.0",
+    "vitest": "^4.0.16",
+    "zod": "^4.3.4"
+  }
+}
