@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client'
-import { canUseDatabase } from '@/config'
+import { canUseDatabase, isProd } from '@/config'
 import { logger } from '@/services/logger'
 
 /**
@@ -40,7 +40,7 @@ export const prisma =
   })()
 
 // Prevent multiple instances in development
-if (process.env.NODE_ENV !== 'production' && canUseDatabase()) {
+if (!isProd && canUseDatabase()) {
   globalForPrisma.prisma = prisma
 }
 
