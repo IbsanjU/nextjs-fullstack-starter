@@ -5,7 +5,7 @@ A production-ready Next.js fullstack starter template with **centralized configu
 ## 🌟 Key Features
 
 - ✅ **Single Config Module** - All environment variables managed in one place (`src/config/`)
-- ✅ **Next.js 14+ App Router** - Latest Next.js with TypeScript
+- ✅ **Next.js 16 with App Router** - Latest Next.js with TypeScript
 - ✅ **Prisma ORM** - Type-safe database access with PostgreSQL
 - ✅ **Docker Ready** - Local development with Docker Compose
 - ✅ **Vercel Ready** - Deploy with zero code changes

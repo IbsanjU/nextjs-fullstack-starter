@@ -13,16 +13,27 @@ const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined
 }
 
+// Mock Prisma client for when database is disabled
+class MockPrismaClient {
+  [key: string]: any
+  constructor() {
+    return new Proxy(this, {
+      get: () => {
+        throw new Error('Database is disabled or not available in this runtime')
+      },
+    })
+  }
+}
+
 export const prisma =
   globalForPrisma.prisma ??
   (() => {
     if (!canUseDatabase()) {
       logger.warn('Database is disabled or not in Node.js runtime')
-      return null as unknown as PrismaClient
+      return new MockPrismaClient() as unknown as PrismaClient
     }
 
     logger.info('Initializing Prisma Client')
-    // For Prisma v7, connection URL is configured in prisma.config.ts
     return new PrismaClient({
       log: ['error', 'warn'],
     })
